@@ -1,6 +1,6 @@
 # Parking Lot using Python 3
 
-One of the most populate problem statement solved with Python. Written in Python 3 without using any external library.
+One of the most popular problem statement solved with Python. Written in Python 3 without using any external library.
 Code structure is object oriented.
 
 ## Problem
@@ -13,6 +13,7 @@ Code structure is object oriented.
 
 
 ## Solution
+- **Not required to install/setup to execute the script**
 - takes a input txt file and expecting commands
 - commands are fixed and list of commands are:
 	- create_parking_lot
@@ -23,10 +24,12 @@ Code structure is object oriented.
 	- slot_numbers_for_cars_with_colour
 	- slot_number_for_registration_number
 - Initially  **Singleton** concept was introduced for Parking class. So Parking class can not be initiate multiple times. (Note: later I removed inheritance of singleton by considering it may break your test cases.)
-- **Run the script**
+
+## Run the script
 ```sh 
 $ ./bin/parking_lot
 ```
+
 - It will looking for input file where the commands are written. If the file location is different, you can provide the absolute path of txt file.
 
 ####  Input file (e.g. /bin/parking_lot file_inputs.txt)
@@ -73,5 +76,7 @@ KA-01-HH-1234, ka-01-HH-9999, KA-01-P-333
 6
 Not found
 ```
+
+
 
 --------------------------------------------------------------------------------------END--------------------------------------------------------------------------------------
