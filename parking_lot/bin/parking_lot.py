@@ -2,8 +2,8 @@ import os
 import sys
 import parking
 
-class VehicleParking(object):
 
+class VehicleParking(object):
     def __init__(self):
         # Parking inherites singleton so it will initiate once.
         self.parking = parking.Parking()
@@ -18,7 +18,7 @@ class VehicleParking(object):
             while True:
                 line = file_obj.__next__()
 
-                if line.endswith('\n'):
+                if line.endswith("\n"):
                     line = line.strip()
 
                 if not line:

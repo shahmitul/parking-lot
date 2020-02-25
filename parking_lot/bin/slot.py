@@ -33,6 +33,5 @@ class Slot(object):
     def available(self, value):
         self._available = value
 
-
     def __repr__(self):
-        return ("<RegNo: %s & Colour: %s>" % (self.car._reg_no, self.car._colour))
+        return "<RegNo: %s & Colour: %s>" % (self.car._reg_no, self.car._colour)

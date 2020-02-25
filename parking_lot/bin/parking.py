@@ -1,8 +1,10 @@
 import car
 from slot import Slot
 
+
 class Singleton(object):
     _instance = None
+
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)
@@ -33,15 +35,11 @@ class Parking(Singleton):
 
         if allow_slots < 1:
             print("Number of slot: %s provided is incorrect." % allow_slots)
-            return 
+            return
 
-        for i in range(1, allow_slots+1):
-            self.slots[i] = Slot(
-                slot_no=i,
-                available=True
-            )
+        for i in range(1, allow_slots + 1):
+            self.slots[i] = Slot(slot_no=i, available=True)
         print("Created a parking lot with %s slots" % allow_slots)
-        
 
     def find_nearest_slot(self):
         """
@@ -131,10 +129,9 @@ class Parking(Singleton):
         reg_nos = []
 
         for pslot in self.slots.values():
-            if not pslot.available and pslot.car and \
-                pslot.car.colour.lower() == colour:
+            if not pslot.available and pslot.car and pslot.car.colour.lower() == colour:
                 reg_nos.append(pslot.car.reg_no)
-        
+
         if reg_nos:
             print(", ".join(reg_nos))
         else:
@@ -150,17 +147,12 @@ class Parking(Singleton):
         if not self._is_valid():
             return
 
-
         colour = colour.lower()
 
         slot_nos = []
 
         for pslot in self.slots.values():
-            if(
-                not pslot.available and
-                pslot.car and
-                pslot.car.colour.lower() == colour
-            ):
+            if not pslot.available and pslot.car and pslot.car.colour.lower() == colour:
                 slot_nos.append(str(pslot.slot_no))
 
         if slot_nos:
@@ -177,10 +169,9 @@ class Parking(Singleton):
         if not self._is_valid():
             return
 
-        slot_no = ''
+        slot_no = ""
         for pslot in self.slots.values():
-            if not pslot.available and pslot.car and \
-                pslot.car.reg_no == reg_no:
+            if not pslot.available and pslot.car and pslot.car.reg_no == reg_no:
                 slot_no = pslot.slot_no
                 break
 
